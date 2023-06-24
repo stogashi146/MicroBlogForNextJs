@@ -34,6 +34,10 @@
   border-radius: 1000px;
 }
 
+.centerCircle {
+  margin: 0 auto;
+}
+
 .colorInherit {
   color: inherit;
 }
@@ -59,4 +63,8 @@
 .boldText {
   color: black;
   font-weight: 550;
+}
+
+.customLink:hover {
+  text-decoration: none;
 }

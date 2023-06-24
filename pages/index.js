@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
-import Layout from "@/components/Layout";
+import Layout, { siteTitle } from "@/components/Layout";
 import UtilStyles from "@/styles/utils.module.css";
 import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import { getPostsData } from "@/lib/post";
+import Head from "next/head";
 
 // SSG（静的生成）の場合　１回だけ表示したいデータなど
 // getStaticPropsはnextjsで用意されている関数
@@ -25,6 +26,9 @@ export default function Home({ allPostsData }) {
   return (
     <>
       <Layout home>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
         <section className={UtilStyles.headingMd}>
           <p>私はフルスタックエンジニアです。</p>
         </section>

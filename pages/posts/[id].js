@@ -2,6 +2,7 @@
 import Layout from "@/components/Layout";
 import { getAllPostIds, getPostData } from "@/lib/post";
 import utilStyles from "@/styles/utils.module.css";
+import Head from "next/head";
 
 // getStaticPathsはnextjsで用意されている関数
 export async function getStaticPaths() {
@@ -27,6 +28,9 @@ export async function getStaticProps({ params }) {
 export default function Post({ postData }) {
   return (
     <Layout>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>{postData.date}</div>
