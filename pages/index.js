@@ -10,7 +10,6 @@ import { getPostsData } from "@/lib/post";
 export async function getStaticProps() {
   // mdの中身をオブジェクトとして取得
   const allPostsData = getPostsData();
-  console.log(allPostsData);
 
   // getStaticProps特有の書き方
   return {
@@ -25,7 +24,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home({ allPostsData }) {
   return (
     <>
-      <Layout>
+      <Layout home>
         <section className={UtilStyles.headingMd}>
           <p>私はフルスタックエンジニアです。</p>
         </section>
